@@ -1,0 +1,245 @@
+\section{Couette Flow with Slip Boundary Condition:}
+\par The velocity profile for an incompressible Couette flows with slip can be obtained by considering a two dimensional channel extending between $\bf x = 0 $ to $\bf x = L $ and $\bf y = 0 $ to $\bf y = H $, with top surface moving with a prescribed velocity $\bf U_\infty$.\\
+\begin{figure}
+\centering
+    \includegraphics[width=12cm,height=5cm]{couetteFlow.png}
+    \caption{\footnotesize Analysis of Couette Flow with slip boundary condition}
+    \label{fig:Couette Flow with Slip}
+\end{figure}
+
+\subsubsection{Assumptions}
+\begin{itemize}
+    \item Steady, incompressible flow, and no mass transport.
+    \item No end effects, $\bf \frac{\partial}{\partial x} \left( \right) = 0$ .
+    \item No edge effects, $\bf \frac{\partial}{\partial z} \left( \right) = 0$ .
+    \item Only gravity force.
+\end{itemize}
+\subsubsection{Continuity equation:}\label{eq:continuity}
+\begin{equation}
+    \bf 
+    \frac{\boldsymbol\partial u}{\partial x} + \frac{\boldsymbol\partial v}{\partial y} + \frac{\boldsymbol\partial w}{\partial z} = 0
+\end{equation}
+By neglecting edge effects and end effects, the above continuity equation(\ref{eq:continuity}) can be reduced to
+\begin{equation}
+    \bf 
+     \frac{\boldsymbol\partial v}{\partial y} = 0
+\end{equation}
+\subsubsection{X-momentum equation:}
+At $\bf y = 0, v = 0, w = 0$ everywhere \\
+\begin{equation}\label{xmom}
+    \bf 
+     \frac{\boldsymbol\partial u}{\partial t} + u\frac{\boldsymbol\partial u}{\partial x} + v\frac{\boldsymbol\partial u}{\partial y} + w\frac{\boldsymbol\partial u}{\partial z} = -\frac{1}{\rho}\frac{\boldsymbol\partial P}{\partial x} + \boldsymbol \nu \left[\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}\right] + F_x 
+\end{equation}
+After considering steady state, neglecting edge effects and end effects, and other forces the above x-momentum  equation(\ref{xmom}) can be reduced to 
+\begin{equation}
+\bf
+0 = \boldsymbol \nu \left[\frac{\partial^2 u}{\partial y^2}\right]
+\end{equation}
+or \\
+\begin{equation}
+\bf
+\left[\frac{\partial^2 u}{\partial y^2}\right] = 0
+\end{equation}
+Now non- dimensionalizing the above equation \\
+\begin{equation}
+    \bf 
+     u^* = \frac{u}{u_\infty}, y^* = \frac{y}{h} 
+\end{equation}
+\begin{equation}
+    \bf 
+     u = u_\infty u^*,   y = h y^* 
+\end{equation}
+
+\begin{equation}
+\bf 
+ \Righttarrow \frac{d^2(u_\infty u^*)}{d(h y^*)^2} = 0
+\end{equation} 
+ 
+ \begin{equation}
+\bf 
+ \Righttarrow \frac{u_\infty}{h^2} \frac{d^2 u^*}{d y^{*^2}} = 0
+\end{equation} 
+
+ \begin{equation}\label{xmomm}
+\bf 
+ \Righttarrow \frac{d^2 u^*}{d y^{*^2}} = 0
+\end{equation}
+Now integrating the above equation (Eq:\ref{xmomm}), then we get
+\begin{equation}\label{ueq}
+    \bf 
+    u^* = C_1 y^* + C_2
+\end{equation}
+\subsubsection{Slip boundary condition}
+\begin{equation}
+\bf
+u_s-u_w = \left(\frac{2-\boldsymbol\sigma_v}{\boldsymbol\sigma_v}\right)\frac{1}{\boldsymbol\rho}\sqrt{\frac{\pi}{2RT_\infty}} \boldsymbol\tau_s + \frac{3}{4} \frac{Pr}{\boldsymbol\rho RT_w} \left(\frac{\boldsymbol\gamma -1}{\boldsymbol\gamma}\right)\left(-q_s\right)
+\end{equation}
+
+\begin{equation}
+\bf
+ u_s-u_w = \left(\frac{2-\boldsymbol\sigma_v}{\boldsymbol\sigma_v}\right)\frac{\boldsymbol\mu}{\boldsymbol\rho}\sqrt{\frac{\pi}{2RT_\infty}} \left(\frac{\partial u_s}{\partial n}\right)_{wall} + \frac{3}{4} \frac{Pr}{\boldsymbol\rho RT_w} \left(\frac{\boldsymbol\gamma -1}{\boldsymbol\gamma}\right)\left(k \frac{\partial T}{\partial x}\right)_{wall}
+\end{equation}
+Where, $\bf \boldsymbol\tau_s = \boldsymbol\mu \left(\frac{\partial u_s}{\partial y}\right)_{wall} $ and  $\bf -q_s = \left(k \frac{\partial T}{\partial x}\right)_{wall}$ \\
+ After non-dimensionalizing the above slip B.C: \\
+ \begin{equation}
+\bf
+ u_s^*-u_w^* = \left(\frac{2-\boldsymbol\sigma_v}{\boldsymbol\sigma_v}\right) Kn \left(\frac{\partial u_s^*}{\partial n^*}\right)_{wall} + \frac{3}{2\boldsymbol\pi} \frac{Kn^2 Re}{E_c} \left(\frac{\boldsymbol\gamma -1}{\boldsymbol\gamma}\right)\left(\frac{\partial T^*}{\partial x^*}\right)_{wall}
+\end{equation}
+or \\
+\begin{equation}
+\bf
+ u_s^*-u_w^* = \boldsymbol{\alpha} \left(\frac{\partial u_s^*}{\partial n^*}\right)_{wall} + \boldsymbol{\beta}
+\end{equation}
+Where, \\
+\begin{equation}
+    \bf
+    \boldsymbol{\alpha} = \left(\frac{2-\boldsymbol \sigma_v}{\boldsymbol \sigma_v}\right)Kn
+\end{equation}
+\begin{equation}
+    \bf 
+    \boldsymbol{\beta} = \frac{3}{2\boldsymbol\pi} \frac{Kn^2 Re}{E_c} \left(\frac{\boldsymbol\gamma -1}{\boldsymbol\gamma}\right)
+\end{equation}
+\subsubsection{Applying boundary conditions:}
+a) \underline{At lower wall :} \\
+$\bf y = 0, y^* = \frac{y}{h} \Rightarrow = \frac{0}{h}, \Rightarrow y^* = 0 \\
+u^* = u_s^*, u_w = 0(stationary\ wall)$ \\
+\begin{equation}\label{ubound}
+\bf
+    u_s^* = u_w^* + \boldsymbol{\alpha} \frac{\boldsymbol \partial u_s^*}{\boldsymbol \partial n^*} + \boldsymbol{\beta}
+\end{equation}
+$\bf u_w^* = \frac{u_w}{u_\infty} \Rightarrow  \frac{0}{u_\infty}= 0 $ \\
+Also, 
+\begin{equation}
+    \bf
+    \boldsymbol{\alpha} \frac{\boldsymbol \partial u_s^*}{\boldsymbol \partial n^*} = \boldsymbol{\alpha} \frac{\boldsymbol \partial u_s^*}{\boldsymbol \partial y^*}
+\end{equation}
+From equation (\ref{ueq}), \\
+\begin{equation}
+    \bf 
+    u^* = C_1 y^* + C_2
+\end{equation}
+\begin{equation}
+    \bf 
+    \frac{\boldsymbol\partial u^*}{\boldsymbol\partial y^*} = C_1
+\end{equation}
+Now, from equation(\ref{ubound})
+\begin{equation}
+    \bf
+\Righttarrow    u_s^* = 0 + \boldsymbol{\alpha} C_1 + \boldsymbol{\beta}
+\end{equation}
+\begin{equation}
+    \bf
+\Righttarrow    u_s^* = \boldsymbol{\alpha} C_1 + \boldsymbol{\beta}
+\end{equation}
+From equation(\ref{ueq}),
+\begin{equation}
+    \bf
+\Righttarrow    u_s^* = C_1y^* + C_2
+\end{equation}
+\begin{equation}
+    \bf
+\Righttarrow    \boldsymbol{\alpha} C_1 + \boldsymbol{\beta} = C_1(0) + C_2
+\end{equation}
+\begin{equation}\label{C2}
+    \bf
+\Righttarrow    \boldsymbol{\alpha} C_1 + \boldsymbol{\beta} = C_2
+\end{equation} 
+b) \underline{At upper wall:} \\
+$\bf u_w = u_\infty, u^* = u_s^*, \Righttarrow u_w^* = \frac{u_w}{u_\infty} = \frac{u_\infty}{u_\infty} = 1, \Rightarrow u_w^* = 1 $ \\
+$\bf y = h, y^* = \frac{y}{h} = \frac{h}{h} = 1 \Rightarrow y^* = 1$ \\
+Now, \\
+\begin{equation}
+\bf
+    u_s^* = u_w^* + \boldsymbol{\alpha} \frac{\boldsymbol \partial u_s^*}{\boldsymbol \partial n^*} + \boldsymbol{\beta}
+\end{equation}
+Here, \\
+\begin{equation}
+    \bf 
+    \boldsymbol{\alpha} \frac{\boldsymbol \partial u_s^*}{\boldsymbol \partial n^*} = - \boldsymbol{\alpha} \frac{\boldsymbol \partial u_s^*}{\boldsymbol \partial y^*} = -\frac{\partial (C_1 y^* + C_2)}{\boldsymbol \partial y^*} 
+\end{equation}
+\begin{equation}
+    \bf
+    \boldsymbol{\alpha} \frac{\boldsymbol \partial u_s^*}{\boldsymbol \partial n^*} = -\boldsymbol{\alpha} \frac{\boldsymbol \partial u_s^*}{\boldsymbol \partial y^*} = -C_1
+\end{equation}
+\begin{equation}
+    \bf
+    u_s^* = 1 + \boldsymbol{\alpha(-C_1)} + \boldsymbol{\beta}
+\end{equation}
+\begin{equation}
+    \bf
+    u_s^* = 1 - \boldsymbol{\alpha C_1} + \boldsymbol{\beta}
+\end{equation}
+Again,
+\begin{equation}
+    \bf
+    u_s^* = C_1 y^* + C_2
+\end{equation}
+\begin{equation}\label{C1C2}
+    \bf
+    1 - \boldsymbol{\alpha C_1} + \boldsymbol{\beta} = C_1(1) + C_2
+\end{equation}
+\begin{equation}
+    \bf
+    1 - \boldsymbol{\alpha C_1} + \boldsymbol{\beta} = C_1 + C_2
+\end{equation}
+From equation (\ref{C2}), put the value of $\bf C_2$ in equation \ref{C1C2} \\
+\begin{equation}
+    \bf
+    1 - \boldsymbol{\alpha C_1} + \boldsymbol{\beta} = C_1 + \boldsymbol{\alpha C_1} + \boldsymbol{\beta}
+\end{equation}
+\begin{equation}
+    \bf
+    1  = C_1 + \boldsymbol{\alpha C_1} + \boldsymbol{\alpha C_1} = C_1 + 2\boldsymbol{\alpha C_1}
+\end{equation}
+\begin{equation}
+    \bf
+    1 = (1 + 2\boldsymbol{\alpha} C_1
+\end{equation}
+\begin{equation}
+    \bf
+    C_1 = \frac{1}{(1+2\boldsymbol{\alpha})}
+\end{equation}
+From equation \ref{C2},\\
+\begin{equation}
+    \bf
+    \boldsymbol{\alpha} C_1 + \boldsymbol{\beta}= C_2
+\end{equation}
+\begin{equation}
+    \bf
+    \frac{\boldsymbol\alpha}{1 + 2\boldsymbol\alpha} +\boldsymbol{\beta}= C_2
+\end{equation}
+\begin{equation}
+    \bf
+    C_2 = \left(\frac{\boldsymbol\alpha}{1 + 2\boldsymbol\alpha}\right) +\boldsymbol{\beta}
+\end{equation}
+ 
+\begin{equation}
+    \bf
+    \implies
+    u^* = C_1 y^* + C_2
+\end{equation}
+
+\begin{equation}
+    \bf
+    \implies
+    u^* = \left(\frac{1}{1 + 2\boldsymbol\alpha}\right)y^* + \left(\frac{\boldsymbol\alpha}{1 + 2\boldsymbol\alpha}\right) + \boldsymbol{\beta}
+\end{equation}
+\begin{equation}
+    \bf
+    \implies
+    u^* = \left(\frac{y^* + \boldsymbol\alpha}{1 + 2\boldsymbol\alpha}\right) + \boldsymbol{\beta}
+\end{equation}
+\begin{equation}\label{final}
+    \bf
+    \implies
+    \frac{u}{u_\infty} = \left(\frac{\frac{y}{h} + \boldsymbol\alpha}{1 + 2\boldsymbol\alpha}\right) + \boldsymbol{\beta}
+\end{equation}
+Now, replacing the values of $\boldsymbol{\alpha} $, and $\boldsymbol{\beta}$, then the above equation (\ref{final}) can be reduced to, 
+\begin{equation}
+    \bf{
+    \implies
+   \boxed{ \frac{u}{u_\infty} = \left[ \frac{\frac{y}{h} + \left(\frac{2-\boldsymbol \sigma_v}{\boldsymbol \sigma_v}\right)Kn}{1 + 2 \left(\frac{2-\boldsymbol \sigma_v}{\boldsymbol \sigma_v}\right)Kn} + \frac{3}{2\boldsymbol\pi} \frac{Kn^2 Re}{E_c} \left(\frac{\boldsymbol\gamma -1}{\boldsymbol\gamma}\right) \left(\frac{\boldsymbol\partial T_s}{\boldsymbol\partial x}\right) \right]} }
+\end{equation}
+This is the expression of slip velocity for couette flow.
+
+
